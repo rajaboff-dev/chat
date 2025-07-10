@@ -36,7 +36,7 @@ app.use(cors());
     try {
         console.clear();
         try {
-            await mongoose.connect('mongodb://localhost:27017/messages');
+            await mongoose.connect("mongodb+srv://asadbekrajabov1337:ASADBEK1337@cluster0.vcopo4u.mongodb.net/chat/messages");
         } catch (error) {
             console.error('Error while connecting to db: ',error);
         }
@@ -62,7 +62,7 @@ io.on('connection', (socket: Socket): void => {
         try {
             const dbMsg = await Message.create(msg);
             console.log('db', dbMsg);
-            io.emit('serverMessage', 'Xabaringiz qabul qilindi: ' + JSON.stringify(msg));
+            io.emit('serverMessage', JSON.stringify(msg));
         } catch (err) {
             console.error('Xatolik:', err);
             socket.emit('serverMessage', 'Xatolik yuz berdi');
