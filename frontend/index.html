@@ -69,14 +69,14 @@
     <button id="btn">Send</button>
 
     <script>
-      const socket = io("http://localhost:5000");
+      const socket = io("https://chat-8a0b.onrender.com");
       const btn = document.getElementById("btn");
       const username = 'user-' + crypto.randomUUID().toString().slice(0, 8);
       const msgInput = document.getElementById("msg-input");
       const chat = document.getElementById("chat");
 
       function fetchAndRenderMessages() {
-        fetch("http://localhost:5000/messages")
+        fetch("https://chat-8a0b.onrender.com/messages")
           .then((response) => response.json())
           .then((messages) => {
             chat.innerHTML = "";
