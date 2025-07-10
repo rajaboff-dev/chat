@@ -36,7 +36,7 @@ app.use(cors());
     try {
         console.clear();
         try {
-            await mongoose.connect("mongodb+srv://asadbekrajabov1337:ASADBEK1337@cluster0.vcopo4u.mongodb.net/chat/messages");
+            await mongoose.connect("mongodb+srv://asadbekrajabov1337:8eYOeeSNf2TsyCug@cluster0.vcopo4u.mongodb.net/chat?retryWrites=true&w=majority");
         } catch (error) {
             console.error('Error while connecting to db: ',error);
         }
